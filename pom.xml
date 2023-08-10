@@ -3,7 +3,7 @@
   
   <modelVersion>4.0.0</modelVersion>
   <groupId>github_testing</groupId>
-  <artifactId>hello-world</artifactId>
+  <artifactId>testing-integration</artifactId>
   <packaging>war</packaging>
   <name>testing-integration</name>
   <url>http://maven.apache.org</url>
