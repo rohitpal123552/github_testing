@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.githubtesting</groupId>
-  <artifactId>testing-integration</artifactId>
+  <groupId>com.testing</groupId>
+  <artifactId>testing</artifactId>
   <packaging>war</packaging>
-  <name>testing-integration</name>
+  <name>testing</name>
   <url>http://maven.apache.org</url>
-  <version>0.0.1-SNAPSHOT</version>
-  <description>testing-integration</description>
+  <version>1.0-SNAPSHOT</version>
+  <description>testing</description>
 
   <build>
     <plugins>
@@ -45,11 +45,6 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.15.2</version>
     </dependency>
   </dependencies>
 </project>
