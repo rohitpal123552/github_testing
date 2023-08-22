@@ -30,7 +30,7 @@ pipeline {
                 sh './go_project_pipeline'
                 withEnv(["PATH+GO=${GOPATH}/bin"]){
                     echo 'Running vetting'
-                    sh 'go vet .'
+                    sh 'go vet hello.go'
                     echo 'Running linting'
                     sh 'golint hello.go'
                     echo 'Running test'
