@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Compiling and building'
                 sh 'go build'
-                sh './go-project-pipeline'
+                // sh './go-project-pipeline'
             }
         }
 
