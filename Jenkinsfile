@@ -27,7 +27,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh './go-project-pipeline'
+                sh './go_project_pipeline'
                 // withEnv(["PATH+GO=${GOPATH}/bin"]){
                 //     echo 'Running vetting'
                 //     sh 'go vet .'
