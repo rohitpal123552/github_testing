@@ -35,7 +35,7 @@ pipeline {
                 //     sh 'golint .'
                 //     echo 'Running test'
                 //     sh 'cd test && go test -v'
-                }
+                // }
             }
         }
         
