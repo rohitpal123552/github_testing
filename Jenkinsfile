@@ -22,22 +22,22 @@ pipeline {
             steps {
                 echo 'Compiling and building'
                 sh 'go build'
-                // sh './go-project-pipeline'
             }
         }
 
-        // stage('Test') {
-        //     steps {
-        //         withEnv(["PATH+GO=${GOPATH}/bin"]){
-        //             echo 'Running vetting'
-        //             sh 'go vet .'
-        //             echo 'Running linting'
-        //             sh 'golint .'
-        //             echo 'Running test'
-        //             sh 'cd test && go test -v'
-        //         }
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                sh './go-project-pipeline'
+                // withEnv(["PATH+GO=${GOPATH}/bin"]){
+                //     echo 'Running vetting'
+                //     sh 'go vet .'
+                //     echo 'Running linting'
+                //     sh 'golint .'
+                //     echo 'Running test'
+                //     sh 'cd test && go test -v'
+                }
+            }
+        }
         
     }
 }
