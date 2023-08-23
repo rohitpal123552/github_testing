@@ -40,12 +40,17 @@ pipeline {
                 sh './jenkins_go_project'
             }
         }
-        stage('Create Zip') {
-            steps {
-                echo 'Create a zip file containing the built binary'
-                sh 'zip jenkins_go_project.zip jenkins_go_project'
+        stage('Create Tarball') {
+             steps {
+                sh 'tar -czvf jenkins_go_project.tar.gz jenkins_go_project'
             }
         }
+        // stage('Create Zip') {
+        //     steps {
+        //         echo 'Create a zip file containing the built binary'
+        //         sh 'zip jenkins_go_project.zip jenkins_go_project'
+        //     }
+        // }
         
     }
 }
