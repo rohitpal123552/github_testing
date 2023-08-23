@@ -36,7 +36,7 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Start the Go application'
-                sh './mygoapp'
+                sh './jenkins_go_project'
             }
         }
         
