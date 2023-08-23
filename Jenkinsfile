@@ -8,34 +8,35 @@ pipeline {
         CGO_ENABLED = 0 
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
     }
-    stages {        
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "Checkout your Go project from the version control system (e.g., Git)"
+                checkout scm
+            }
+        }
         stage('Pre Test') {
             steps {
                 echo 'Installing dependencies'
-                echo '${GOPATH}'
                 sh 'go version'
-                sh 'go get -u golang.org/x/lint/golint'
             }
         }
-        
         stage('Build') {
             steps {
-                echo 'Compiling and building'
-                sh 'go build'
+                echo 'Build the Go project'
+                sh 'go build mygoapp'
             }
         }
-
         stage('Test') {
             steps {
-                sh './go_project_pipeline'
-                withEnv(["PATH+GO=${GOPATH}/bin"]){
-                    echo 'Running vetting'
-                    sh 'go vet hello.go'
-                    echo 'Running linting'
-                    sh 'golint hello.go'
-                    echo 'Running test'
-                    sh 'cd test && go test -v'
-                }
+                echo 'Run unit tests'
+                sh 'go test ./mymath'
+            }
+        }
+        stage('Run') {
+            steps {
+                echo 'Start the Go application'
+                sh './mygoapp'
             }
         }
         
