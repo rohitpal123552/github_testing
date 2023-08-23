@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"mygoapp/mymath"
+	"jenkins_go_project/mymath"
 )
 
 func main() {
