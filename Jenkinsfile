@@ -19,6 +19,7 @@ pipeline {
             steps {
                 echo 'Installing dependencies'
                 sh 'go version'
+                println(GOPATH)
             }
         }
         stage('Build') {
