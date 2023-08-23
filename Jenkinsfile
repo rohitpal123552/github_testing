@@ -41,8 +41,22 @@ pipeline {
             }
         }
         stage('Create Tarball') {
-             steps {
+            steps {
                 sh 'tar -czvf jenkins_go_project.tar.gz jenkins_go_project'
+                script {
+                    // Define the filename
+                    def filename = 'jenkins_go_project.tar.gz'
+                    
+                    // Check if the tarball file exists
+                    def tarballExists = fileExists(filename)
+                    if (tarballExists) {
+                        def currentDir = pwd()
+                        def fullPath = "${currentDir}/${filename}"
+                        echo "Tarball created at: ${fullPath}"
+                    } else {
+                        error 'Tarball creation failed'
+                    }
+                }
             }
         }
         // stage('Create Zip') {
