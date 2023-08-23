@@ -24,7 +24,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the Go project'
-                sh 'go build mygoapp'
+                sh 'go build'
             }
         }
         stage('Test') {
