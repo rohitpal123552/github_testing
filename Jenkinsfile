@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Run unit tests'
-                sh 'go test ./mymath'
+                sh 'go test ./...'
             }
         }
         stage('Run') {
